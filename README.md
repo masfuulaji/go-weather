@@ -53,8 +53,4 @@ Contributions are welcome! If you find any issues or have suggestions for improv
 
 ## Contact
 
-For questions or support, you can reach out to me at your.email@example.com.
-
----
-
-Feel free to customize the README as needed for your project. You can add more sections, such as "Acknowledgments," "Troubleshooting," or "FAQ," based on your specific requirements. Once you've made the desired changes, you can copy and paste the content into your GitHub repository's README.md file.
+For questions or support, you can reach out to me at masfuulaji@gmail.com.
