@@ -44,7 +44,7 @@ The CLI tool can be used as follows:
 weather-check --city "New York"
 ```
 
-Replace `"New York"` with the desired city name for which you want to check the weather. If you do not provide the `--city` flag, it will default to "New York".
+Replace `"New York"` with the desired city name for which you want to check the weather. If you do not provide the `--city` flag, it will default to "Malang".
 
 
 ## Contributing
