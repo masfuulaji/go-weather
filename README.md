@@ -22,7 +22,7 @@ Weather Check CLI is a command-line tool built in Go that allows you to check th
    cd weather-check-cli
    ```
 
-3. Replace `"API_KEY"` in the `.env` file with your actual OpenWeatherMap API key.
+3. Duplicate `env.go.example` then rename it to `env.go` and Replace `"API_KEY"` in the `env.go` file with your actual OpenWeatherMap API key.
 
 4. Build the executable:
 
