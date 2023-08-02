@@ -4,9 +4,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"net/http"
-	"os"
 
-	"github.com/joho/godotenv"
 	"github.com/spf13/cobra"
 )
 
@@ -42,7 +40,7 @@ func init() {
 }
 
 func getWeather(cmd *cobra.Command, args []string) {
-    apiKey := os.Getenv("API_KEY")
+    apiKey := API_KEY 
 	url := fmt.Sprintf("%s?q=%s&appid=%s&units=metric", weatherAPIURL, city, apiKey)
 
 	response, err := http.Get(url)
@@ -65,12 +63,7 @@ func getWeather(cmd *cobra.Command, args []string) {
 }
 
 func main() {
-    err := godotenv.Load()
-    if err != nil {
-        fmt.Println("Error loading .env file : ", err)
-    }
-
-	err = rootCmd.Execute()
+    err := rootCmd.Execute()
 	if err != nil {
 		fmt.Println(err)
 	}
