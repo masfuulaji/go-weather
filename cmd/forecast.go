@@ -1,4 +1,4 @@
-package main
+package cmd
 
 import (
 	"encoding/json"
@@ -7,6 +7,7 @@ import (
 	"time"
 
 	"github.com/spf13/cobra"
+	"github.com/spf13/viper"
 )
 
 var forecastCmd = &cobra.Command{
@@ -22,6 +23,7 @@ var forecastCmd = &cobra.Command{
 
 func init() {
 	rootCmd.AddCommand(forecastCmd)
+	forecastCmd.Flags().StringVarP(&forecastCity, "city", "c", "", "City name")
 }
 
 var forecastCity string
@@ -57,12 +59,14 @@ type ForecastResponse struct {
 	} `json:"forecast"`
 }
 
-func init() {
-	forecastCmd.Flags().StringVarP(&forecastCity, "city", "c", "", "City name")
-}
-
 func getForecast(cmd *cobra.Command, args []string) {
-	apiKey := API_KEY
+	apiKey := viper.GetString("api_key")
+    if apiKey == "" {
+        fmt.Println("API key not set")
+        fmt.Println("Please set your API key using `weather-check set-key`")
+        return
+    }
+    weatherAPIURL := viper.GetString("weather_url")
 	url := fmt.Sprintf("%s/%s?key=%s&q=%s&days=1", weatherAPIURL, "forecast.json", apiKey, forecastCity)
 
 	response, err := http.Get(url)
