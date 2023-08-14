@@ -6,6 +6,7 @@ import (
 	"net/http"
 	"time"
 
+	"github.com/fatih/color"
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
 )
@@ -99,10 +100,21 @@ func getForecast(cmd *cobra.Command, args []string) {
 			if err != nil {
 				fmt.Println(err)
 			}
-			fmt.Printf("    Time: %s\n", parsedTime.Format("15:04"))
-			fmt.Printf("    Weather: %s\n", forecastResponse.Forecast.Forecastday[i].Hour[j].Condition.Text)
-			fmt.Printf("    Temperature: %f\n", forecastResponse.Forecast.Forecastday[i].Hour[j].TempC)
-			fmt.Printf("-------------------------------------\n")
+            forecast := fmt.Sprintf(
+                "%s - %.0fC, %d%%, %s", 
+                parsedTime.Format("15:04"),
+                forecastResponse.Forecast.Forecastday[i].Hour[j].TempC,
+                forecastResponse.Forecast.Forecastday[i].Hour[j].ChanceOfRain,
+                forecastResponse.Forecast.Forecastday[i].Hour[j].Condition.Text)
+            if forecastResponse.Forecast.Forecastday[i].Hour[j].ChanceOfRain > 40 {
+                color.Blue(forecast)
+                continue
+            }
+            if forecastResponse.Forecast.Forecastday[i].Hour[j].Condition.Text == "Sunny" {
+                color.Yellow(forecast)
+                continue
+            }
+            fmt.Println(forecast)
 		}
 		fmt.Printf("======================================\n")
 	}
