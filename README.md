@@ -5,23 +5,30 @@ Weather Check CLI is a command-line tool built in Go that allows you to check th
 
 ## Prerequisites
 
-- An API key from WeatherAPI. You can sign up for a free API key at https://www.weatherapi.com/signup.aspx.
+- Go (Golang) installed on your machine.
+- An API key from OpenWeatherMap. You can sign up for a free API key at https://home.openweathermap.org/users/sign_up.
 
 ## Installation
 
-1. Run the App in terminal:
-
-   ```bash 
-   ./weather-check 
-   ```
-
-2. Set API key with the following command:
+1. Clone this repository:
 
    ```bash
-    ./weather-check set-key
+   git clone https://github.com/yourusername/weather-check-cli.git
    ```
 
-5. Move the executable to a location in your PATH:
+2. Navigate to the project directory:
+
+   ```bash
+   cd weather-check-cli
+   ```
+
+3. Build the executable:
+
+   ```bash
+   go build -o weather-check
+   ```
+
+4. Move the executable to a location in your PATH:
 
    ```bash
    sudo mv weather-check /usr/local/bin/
@@ -31,16 +38,12 @@ Weather Check CLI is a command-line tool built in Go that allows you to check th
 
 The CLI tool can be used as follows:
 
-## Help for see available commands
 ```bash
-weather-check --help
+weather-check --city "New York"
 ```
 
-## Examples of usage
-```bash
-weather-check weather --city "New York"
-```
 Replace `"New York"` with the desired city name for which you want to check the weather. If you do not provide the `--city` flag, it will default to "Malang".
+
 
 ## Contributing
 
