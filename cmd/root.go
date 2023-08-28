@@ -10,6 +10,12 @@ import (
 var rootCmd = &cobra.Command{
 	Use:   "weather-cli",
 	Short: "CLI tool for weather",
+    PersistentPreRun: func(cmd *cobra.Command, args []string) {
+        if city == "" {
+            city = "malang"
+        }
+    },
+    Run: getWeather,
 }
 
 
