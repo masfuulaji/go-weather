@@ -1,54 +1,53 @@
+# Weather Check CLI App
 
-## Overview
+## Features
 
-Weather Check CLI is a command-line tool built in Go that allows you to check the current weather for a given city using data from the OpenWeatherMap API.
+- **Current Weather:** Get instant access to the current weather conditions. Receive real-time updates on temperature, humidity, wind speed, and more.
 
-## Prerequisites
+- **Five-Day Forecast:** Stay prepared with a five-day weather forecast that includes temperature trends, precipitation chances, and more.
 
-- Go (Golang) installed on your machine.
-- An API key from OpenWeatherMap. You can sign up for a free API key at https://home.openweathermap.org/users/sign_up.
+- **Easy to Use:** Weather Check is user-friendly and easy to integrate into your daily routine. With a simple command, you can retrieve all the weather information you need.
 
 ## Installation
 
-1. Clone this repository:
+Installing Weather Check is a breeze. Just follow these steps:
+
+1. Open your terminal.
+
+2. Use the following command to download Weather Check:
 
    ```bash
-   git clone https://github.com/yourusername/weather-check-cli.git
+   wget https://github.com/masfuulaji/go-weather/releases/download/v1.0.0/weather-check
    ```
 
-2. Navigate to the project directory:
+3. Make the downloaded file executable:
 
    ```bash
-   cd weather-check-cli
+   chmod +x weather-check
    ```
 
-3. Build the executable:
+4. Move the executable to a directory in your PATH (optional):
 
    ```bash
-   go build -o weather-check
+   mv weather-check /usr/local/bin/
    ```
 
-4. Move the executable to a location in your PATH:
-
-   ```bash
-   sudo mv weather-check /usr/local/bin/
-   ```
+5. You're all set! Start using Weather Check with the `weather-check` command.
 
 ## Usage
 
-The CLI tool can be used as follows:
+Using Weather Check is simple and intuitive. Here are some examples:
 
-```bash
-weather-check --city "New York"
-```
+- Get the current weather for your location:
+  ```bash
+  weather-check weather
+  ```
 
-Replace `"New York"` with the desired city name for which you want to check the weather. If you do not provide the `--city` flag, it will default to "Malang".
+- Get a forecast for your location:
+  ```bash
+  weather-check forecast
+  ```
 
+Weather Check is your go-to tool for staying informed about the weather without leaving your terminal. No more switching between apps or browser tabs—just the weather information you need, right at your fingertips.
 
-## Contributing
-
-Contributions are welcome! If you find any issues or have suggestions for improvements, feel free to create an issue or submit a pull request.
-
-## Contact
-
-For questions or support, you can reach out to me at masfuulaji@gmail.com.
+Download Weather Check today and make informed decisions based on accurate weather data.
